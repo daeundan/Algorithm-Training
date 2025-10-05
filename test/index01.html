@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1 - 암호를 해독해라!</title>
+    <script>
+        let data = ['   + -- + - + -   ','   + --- + - +   ', '   + -- + - + -   ','   + - + - + - +   '];
+        // for of 문 실행
+        // for (var s of data ) {
+        //     console.log(s)
+        // }
+        // for in 문 실행
+        // for (var s in data ) {
+        //     console.log(s)
+        // }
+        // 아무것도 없는 문자열로 변환
+        // for (var s of data) {
+        //     console.log(s.replace(' ', '').replace(' ', '').replace(' ', '')) 
+        // }
+        // 아무것도 없는 문자열 반환 -> 정규 표현식 사용
+        // 이진법 -> 십진법 -> 문자로 변환하는 문제
+        let result = '';
+        for (var s of data) {
+            console.log(s.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0'));
+            console.log(Number(s.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0')));
+            console.log(parseInt(s.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0'), 2));
+            // 74, 69, 74, 85 가 출력됨 -> 문자열로 변환해야됨
+            console.log(String.fromCharCode(parseInt(s.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0'), 2)));
+            result += String.fromCharCode(parseInt(s.replace(/ /g, '').replace(/\+/g, '1').replace(/-/g, '0'), 2));
+        }
+        console.log(result);
+        // JEJU가 출력됨
+    </script>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .box2 {
+            background: #f3d78a;
+            padding: 10px;
+            border: 1px solid #181818;
+            border-radius: 8px;
+        }
+        .box {
+            background: #ddd;
+            padding: 10px;
+            border: 1px solid #181818;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <h1>인코딩 문제</h1>
+    <div class="box2">
+        모든 알고리즘을 해독할 수 있는 알고리즘 7원석을 보유한 알고리즘 제왕 파이와 썬은 죽기 전, <br>
+        이 보물에 '암호'룰 걸어 어딘가에 묻어놨다고 공포하였다. 그가 남긴 문자는 다음과 같다.
+    </div>
+    <div class="box"> <h2>섬으로 향하라!</h2>
+        '   + -- + - + -   '<br>
+        '   + --- + - +   '<br>
+        '   + -- + - + -   '<br>
+        '   + - + - + - +   '<br>
+        <span>
+            해(1)와 달(0), Code의 세상 안으로!(En-Coding)
+        </span>
+    </div>
+    <h2>추가 정보</h2>
+    <div>
+        문자 인코딩 : 문자나 기호들의 집합을 컴퓨터에서 표현하는 방법<br>
+        console.log 에 출력 <br>
+        <div class="box">
+            1001010 <br>
+            1000101 <br>
+            1001010 <br>
+            1010101 <br>
+        </div>
+        이 내용을 문자로 변환하는 것<br>
+        아스키 코드(이진법)- 모양: 알파벳
+    </div>
+</div>
+</body>
+
+</html>
